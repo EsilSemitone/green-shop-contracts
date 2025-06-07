@@ -1,0 +1,19 @@
+export const PRODUCT_CATEGORY_ENUM = {
+    HOUSE_PLANTS: "HOUSE_PLANTS", 
+    POTTER_PLANTS: "POTTER_PLANTS", 
+    SEEDS: "SEEDS", 
+    SMALL_PLANTS: "SMALL_PLANTS", 
+    BIG_PLANTS: "BIG_PLANTS", 
+    SUCCULENTS: "SUCCULENTS", 
+    TRERRARIUMS: "TRERRARIUMS", 
+    GARDENING: "GARDENING", 
+    ACCESSORIES: "ACCESSORIES", 
+} as const 
+
+export type PRODUCT_CATEGORY = keyof typeof PRODUCT_CATEGORY_ENUM
+
+const PRODUCT_CATEGORY_ARR = Object.keys(PRODUCT_CATEGORY_ENUM)
+
+export function isProductCategory(category: string): category is PRODUCT_CATEGORY {
+    return PRODUCT_CATEGORY_ARR.includes(category)
+}
