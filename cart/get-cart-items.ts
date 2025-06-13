@@ -1,4 +1,4 @@
-import { TypeOf, z } from "zod";
+import { TypeOf } from "zod";
 import { CartItemSchema } from "./cart-item-schema.js";
 
 export const GetCartItemsResponseSchema = CartItemSchema.array();

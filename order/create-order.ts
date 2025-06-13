@@ -1,7 +1,6 @@
 import { TypeOf, z } from "zod";
 import { ExtendedOrderSchema } from "./order-extended.schema.js";
 import { PAYMENT_METHOD } from "../enums/payment-method.js";
-import { AddressSchema } from "../address/address.schema.js";
 
 export const CreateOrderRequestSchema = z.object({
   payment_method: z.nativeEnum(PAYMENT_METHOD),

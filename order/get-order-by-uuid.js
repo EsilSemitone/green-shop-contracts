@@ -4,7 +4,7 @@ exports.GetOrderByUuidResponseSchema = exports.GetOrderByUuidRequestParamsSchema
 const zod_1 = require("zod");
 const order_extended_schema_js_1 = require("./order-extended.schema.js");
 exports.GetOrderByUuidRequestParamsSchema = zod_1.z.object({
-    orderId: zod_1.z.string().uuid()
+    orderId: zod_1.z.string().uuid(),
 });
 exports.GetOrderByUuidResponseSchema = zod_1.z.object({
     order: order_extended_schema_js_1.ExtendedOrderSchema,
