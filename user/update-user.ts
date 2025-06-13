@@ -1,4 +1,4 @@
-import { z, TypeOf } from "zod";
+import { TypeOf } from "zod";
 import { UserSchema } from "./user.schema.ts";
 
 export const UpdateUserRequestSchema = UserSchema.pick({

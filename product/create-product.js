@@ -7,6 +7,6 @@ exports.CreateProductRequestSchema = product_schema_js_1.ProductSchema.pick({
     short_description: true,
     description: true,
     category: true,
-    images: true
+    images: true,
 });
 exports.CreateProductResponseSchema = product_schema_js_1.ProductSchema;

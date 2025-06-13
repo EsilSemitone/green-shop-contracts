@@ -11,5 +11,5 @@ exports.ExtendedReviewSchema = review_schema_js_1.ReviewSchema.extend({
     comments: extended_review_comment_js_1.ExtendedReviewCommentSchema.extend({
         name: zod_1.z.string(),
         image: zod_1.z.string().nullable(),
-    }).array()
+    }).array(),
 });
