@@ -16,8 +16,8 @@ export const GetAllUsersResponseSchema = z.object({
         name: true,
         email: true
     }).array(),
-    page: z.string(),
-    totalPage: z.string()
+    page: z.number(),
+    totalPage: z.number()
 })
 
 export type GetAllUsersRequestQueryDto = TypeOf<typeof GetAllUsersRequestQuerySchema>

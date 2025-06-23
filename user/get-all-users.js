@@ -17,6 +17,6 @@ exports.GetAllUsersResponseSchema = zod_1.z.object({
         name: true,
         email: true
     }).array(),
-    page: zod_1.z.string(),
-    totalPage: zod_1.z.string()
+    page: zod_1.z.number(),
+    totalPage: zod_1.z.number()
 });
