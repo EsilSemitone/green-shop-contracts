@@ -15,7 +15,8 @@ exports.GetAllUsersResponseSchema = zod_1.z.object({
     users: user_schema_ts_1.UserSchema.pick({
         uuid: true,
         name: true,
-        email: true
+        email: true,
+        photo_image: true
     }).array(),
     page: zod_1.z.number(),
     totalPage: zod_1.z.number()

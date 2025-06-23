@@ -14,7 +14,8 @@ export const GetAllUsersResponseSchema = z.object({
     users: UserSchema.pick({
         uuid: true,
         name: true,
-        email: true
+        email: true,
+        photo_image: true
     }).array(),
     page: z.number(),
     totalPage: z.number()
