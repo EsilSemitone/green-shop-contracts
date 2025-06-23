@@ -1,0 +1,24 @@
+import { TypeOf, z } from "zod";
+import { ORDER_BY_USERS_ENUM } from "../enums/order-by-users.ts";
+import { UserSchema } from "./user.schema.ts";
+
+export const GetAllUsersRequestQuerySchema = z.object({
+    search: z.string().max(30).optional(),
+    isAdmin: z.boolean().optional(),
+    orderBy: z.nativeEnum(ORDER_BY_USERS_ENUM),
+    limit: z.coerce.number().positive(),
+    offset: z.coerce.number(),
+})
+
+export const GetAllUsersResponseSchema = z.object({
+    users: UserSchema.pick({
+        uuid: true,
+        name: true,
+        email: true
+    }).array(),
+    page: z.string(),
+    totalPage: z.string()
+})
+
+export type GetAllUsersRequestQueryDto = TypeOf<typeof GetAllUsersRequestQuerySchema>
+export type GetAllUsersResponseDto = TypeOf<typeof GetAllUsersResponseSchema>
