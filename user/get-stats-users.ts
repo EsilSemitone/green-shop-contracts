@@ -11,7 +11,7 @@ export const GetStatsUsersRequestParamsDto = z.object({
 
 export const GetStatsUsersResponseSchema = z.object({
     stats: z.object({
-        date: z.string(),
+        date: z.date(),
         count: z.number()
     }).array(),
     total: z.number()
