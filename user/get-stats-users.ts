@@ -1,11 +1,10 @@
 import { TypeOf, z } from "zod";
 import { STATS_RANGE } from "../enums/stats-range.ts";
-import { dateValidator } from "./utils/valid-date.ts";
 
 export const GetStatsUsersRequestParamsDto = z.object({
     range: z.nativeEnum(STATS_RANGE),
-    startDay: dateValidator,
-    endDay: dateValidator,
+    startDay: z.string().date(),
+    endDay: z.string().date(),
 }).refine(schema => {
     return new Date(schema.endDay).getTime() > new Date(schema.startDay).getTime()
 }, {message: "Дата конца периода должна быть не раньше начала"})
