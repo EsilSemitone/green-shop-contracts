@@ -4,7 +4,9 @@ import { UserSchema } from "./user.schema.ts";
 
 export const GetAllUsersRequestQuerySchema = z.object({
     search: z.string().max(30).optional(),
-    isAdmin:  z.coerce.boolean().optional(),
+    isAdmin:  z.string().transform(arg => {
+        return arg === 'true' ? true : false
+    }),
     orderBy: z.nativeEnum(ORDER_BY_USERS_ENUM),
     limit: z.coerce.number().positive(),
     offset: z.coerce.number(),
