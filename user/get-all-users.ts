@@ -6,7 +6,7 @@ export const GetAllUsersRequestQuerySchema = z.object({
     search: z.string().max(30).optional(),
     isAdmin:  z.string().transform(arg => {
         return arg === 'true' ? true : false
-    }),
+    }).optional(),
     orderBy: z.nativeEnum(ORDER_BY_USERS_ENUM),
     limit: z.coerce.number().positive(),
     offset: z.coerce.number(),
