@@ -12,7 +12,7 @@ exports.GetStatsUsersRequestParamsDto = zod_1.z.object({
 }, { message: "Дата конца периода должна быть не раньше начала" });
 exports.GetStatsUsersResponseSchema = zod_1.z.object({
     stats: zod_1.z.object({
-        date: zod_1.z.string(),
+        date: zod_1.z.date(),
         count: zod_1.z.number()
     }).array(),
     total: zod_1.z.number()
