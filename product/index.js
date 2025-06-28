@@ -20,3 +20,4 @@ __exportStar(require("./delete-product.js"), exports);
 __exportStar(require("./get-product-by-uuid.js"), exports);
 __exportStar(require("./update-product.js"), exports);
 __exportStar(require("./get-product-filter.js"), exports);
+__exportStar(require("./get-all-products.js"), exports);
