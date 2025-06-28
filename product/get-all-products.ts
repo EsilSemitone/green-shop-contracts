@@ -15,4 +15,4 @@ export const GetAllProductsResponseSchema = z.object({
 
 
 export type GetAllProductsRequestQueryDto = TypeOf<typeof GetAllProductsRequestQuerySchema>
-export type GetAllProductsResponseDto = TypeOf<typeof GetAllProductsRequestQuerySchema>
+export type GetAllProductsResponseDto = TypeOf<typeof GetAllProductsResponseSchema>
