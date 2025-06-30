@@ -2,10 +2,11 @@ import { TypeOf, z } from "zod";
 import { ProductVariantSchema } from "./product-variant.schema.ts";
 
 export const CreateProductVariantRequestSchema = ProductVariantSchema.pick({
-    rating: true,
     price: true,
     size: true,
     stock: true,
+}).extend({
+    tags: z.string().array().optional()
 })
 
 export const CreateProductVariantRequestParamsSchema = z.object({
