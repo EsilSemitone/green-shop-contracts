@@ -5,6 +5,7 @@ const zod_1 = require("zod");
 const product_schema_js_1 = require("../product/product.schema.js");
 const product_category_js_1 = require("../enums/product-category.js");
 const size_js_1 = require("../enums/size.js");
+const order_by_product_variants_js_1 = require("../enums/order-by-product-variants.js");
 exports.GetProductVariantsByCriteriaRequestParamsSchema = zod_1.z.object({
     productId: zod_1.z.string().uuid(),
 });
@@ -16,6 +17,7 @@ exports.GetProductVariantsByCriteriaRequestQuerySchema = zod_1.z.object({
     search: zod_1.z.string().optional(),
     limit: zod_1.z.coerce.number().positive(),
     offset: zod_1.z.coerce.number(),
+    orderBy: zod_1.z.nativeEnum(order_by_product_variants_js_1.ORDER_BY_PRODUCT_VARIANTS_ENUM)
 });
 exports.GetProductVariantsByCriteriaResponseSchema = zod_1.z.object({
     products: product_schema_js_1.ProductSchema.pick({
