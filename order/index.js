@@ -21,3 +21,5 @@ __exportStar(require("./order-item.schema"), exports);
 __exportStar(require("./order.schema"), exports);
 __exportStar(require("./get-order-by-uuid"), exports);
 __exportStar(require("./get-order-details"), exports);
+__exportStar(require("./get-all-orders"), exports);
+__exportStar(require("./update-order"), exports);
