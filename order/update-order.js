@@ -7,6 +7,7 @@ exports.UpdateOrderRequestParamsSchema = zod_1.z.object({
     orderUuid: zod_1.z.string().uuid()
 });
 exports.UpdateOrderRequestSchema = order_schema_1.OrderSchema.pick({
-    status: true
-});
+    status: true,
+    payment_method: true
+}).partial();
 exports.UpdateOrderResponseSchema = order_schema_1.OrderSchema;

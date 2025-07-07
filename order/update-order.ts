@@ -6,8 +6,9 @@ export const UpdateOrderRequestParamsSchema = z.object({
 })
 
 export const UpdateOrderRequestSchema = OrderSchema.pick({
-    status: true
-})
+    status: true,
+    payment_method: true
+}).partial()
 
 export const UpdateOrderResponseSchema = OrderSchema
 
